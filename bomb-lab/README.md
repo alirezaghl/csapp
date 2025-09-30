@@ -46,12 +46,12 @@ these lines are key. at a high level, it's a loop that loads the input from the 
 
 
 
-### Solution
+### solution
 `1 2 4 8 16 32`
 
 ---
 
-## Phase 3
+## phase 3
 
 ### key lines
 ```assembly
@@ -64,19 +64,19 @@ these lines are key. at a high level, it's a loop that loads the input from the 
 0x400fbe <+123>: cmp    0xc(%rsp),%eax
 ```
 
-### solution process
+### analysis
 through debugging and examining registers after a case executes, I found the value stored in `%eax`. for example, at case 7, stepping through the code reveals `%eax` contains 327.
 
-### Solution
+### solution
 `7 327` (case 7 loads 327 into %eax, which must match the second input)
 
 Note: Several solutions exist (0-7 for the first number, with a corresponding second number for each case).
 
 ---
 
-## Phase 4
+## phase 4
 
-### Key Lines (phase_4)
+### key lines (phase_4)
 ```assembly
 0x40102e <+34>:  cmpl   $0xe,0x8(%rsp)
 0x401033 <+39>:  jbe    0x40103a <phase_4+46>
@@ -88,7 +88,7 @@ Note: Several solutions exist (0-7 for the first number, with a corresponding se
 0x401051 <+69>:  cmpl   $0x0,0xc(%rsp)
 ```
 
-### Key Lines (func4)
+### key lines (func4)
 ```assembly
 0x400fd2 <+4>:   mov    %edx,%eax
 0x400fd4 <+6>:   sub    %esi,%eax
@@ -103,7 +103,7 @@ Note: Several solutions exist (0-7 for the first number, with a corresponding se
 
 
 
-### Solution Approach
+### analysis
 The second number must be zero (verified by the comparison at line +69). The first number should be a value that makes func4 return zero. this goal is satisfied by several numbers. The process resembles a binary search.
 
 solutions include: `0 0`, `1 0`, `3 0`, `7 0`
@@ -112,7 +112,7 @@ I believe these numbers work because they appear as midpoints during the binary 
 
 ---
 
-## Phase 5: Character Encoding Table
+## phase 5
 
 This was very hard!
 
