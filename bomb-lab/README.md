@@ -128,7 +128,7 @@ This was very hard!
 0x4010bd <+91>:  call   0x401338 <strings_not_equal>
 ```
 
-### Analysis Process
+### analysis
 the input should be 6 characters. First, I examined the address `0x40245e`, which contained the string "flyers". In the previous lines, there is a byte loading operation (+41), and the next line extracts the lower 4 bits. I suspected that the input characters should have lower 4 bits that match the indices in the lookup table needed to reconstruct "flyers".
 
 ### Lookup Table
