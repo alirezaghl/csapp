@@ -115,13 +115,13 @@ return (mask & z) | ((~mask) & y);
   - `mask = 0x00000000` (all 0s)
   - `mask & z = 0` (z is zeroed out)
   - `~mask & y = 0xFFFFFFFF & y = y` (y passes through)
-  - result: `0 | y = y` ✓
+  - result: `0 | y = y` 
 
 - When x is **zero** (want z):
   - `mask = 0xFFFFFFFF` (all 1s)
   - `mask & z = z` (z passes through)
   - `~mask & y = 0x00000000 & y = 0` (y is zeroed out)
-  - result: `z | 0 = z` ✓
+  - result: `z | 0 = z` 
 
 
 ---
