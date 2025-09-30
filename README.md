@@ -1,4 +1,4 @@
-# csapp sabs
+# csapp labs
 
 solutions to the *Computer Systems: A Programmer's Perspective* labs.
 
