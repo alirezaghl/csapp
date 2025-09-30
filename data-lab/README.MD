@@ -38,7 +38,7 @@ return ~(0x7FFFFFFF);
 return (!((x + 1) & 0x0FFFFFFF)) & (((x+1) >> 31) & 1);
 ```
 
-**approach** adding 1 to TMAX produces a unique testable pattern which is TMIN.
+**approach** adding 1 to TMAX produces a unique pattern which is TMIN.
 
 ---
 
