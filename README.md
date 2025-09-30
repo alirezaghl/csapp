@@ -1,2 +1,2 @@
 # csapp
-solutions to the computer system a programmer perspective labs
+solutions to the Computer Systems AProgrammer’s Perspective labs
