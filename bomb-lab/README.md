@@ -1,7 +1,7 @@
 # Bomb solutions: Phases 1-5
 
 ## Overview
-This guide documents the reverse engineering process and solutions for the first five phases of the CMU Bomb Lab. I could not solve phase 6, so I put it aside for another time to think about it. Overall, this was a very fun assignment.
+the reverse engineering process and solutions for the first five phases of the CMU Bomb Lab. I could not solve phase 6, so I put it aside for another time to think about it. Overall, this was a very fun assignment.
 
 ---
 
@@ -131,15 +131,15 @@ This was very hard!
 ### analysis
 the input should be 6 characters. First, I examined the address `0x40245e`, which contained the string "flyers". In the previous lines, there is a byte loading operation (+41), and the next line extracts the lower 4 bits. I suspected that the input characters should have lower 4 bits that match the indices in the lookup table needed to reconstruct "flyers".
 
-### Lookup Table
+### lookup table
 ```
  0:m  1:a  2:d  3:u  4:i  5:e  6:r  7:s
  8:n  9:f 10:o 11:t 12:v 13:b 14:y 15:l
 ```
 
-With Claude's help, I found characters whose lower 4 bits match the required indices:
+with Claude's help, I found characters whose lower 4 bits match the required indices:
 
-**Target: "flyers"**
+**target: "flyers"**
 - 'f' is at index 9 → need char with lower 4 bits = 9 (e.g., 'i', 'y', '9')
 - 'l' is at index 15 → need char with lower 4 bits = 15 (e.g., 'o', '?', 'O')
 - 'y' is at index 14 → need char with lower 4 bits = 14 (e.g., 'n', '.', 'N')
@@ -147,7 +147,7 @@ With Claude's help, I found characters whose lower 4 bits match the required ind
 - 'r' is at index 6 → need char with lower 4 bits = 6 (e.g., 'f', '6', 'F')
 - 's' is at index 7 → need char with lower 4 bits = 7 (e.g., 'g', '7', 'G')
 
-### Example Solution
+### solution
 `ionefg`
 
 
